@@ -1,0 +1,9 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<span class:list={["grid shrink-0 place-items-center rounded-circle font-bold", className]}><slot /></span>

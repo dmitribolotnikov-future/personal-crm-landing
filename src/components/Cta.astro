@@ -1,0 +1,30 @@
+---
+import AvatarStack from "./AvatarStack.astro";
+import Button from "./Button.astro";
+import Logo from "./Logo.astro";
+---
+
+<section
+  class="mx-5 mb-5 flex flex-col gap-6 rounded-36 bg-powder px-5 pt-10 pb-6 md:mx-0 md:mb-10 md:items-center md:gap-8 md:rounded-48 md:px-block md:pt-20 md:pb-8 md:text-center"
+>
+  <AvatarStack
+    avatarClass="size-11.5 border-3 border-powder text-13 md:size-14.5 md:text-15"
+    overlapClass="-ml-2.5 md:-ml-3"
+    avatars={[
+      { initials: "СК", class: "bg-white text-accent" },
+      { initials: "ДМ", class: "bg-accent text-white" },
+      { initials: "АП", class: "bg-ink text-white" },
+      { initials: "ИП", class: "bg-white text-ink" },
+    ]}
+  />
+  <h2
+    class="text-38 leading-display font-bold tracking-tight-45 text-balance md:max-w-205 md:text-h2-final md:tracking-tight-50"
+  >
+    Помните всё о&nbsp;тех, кого знаете лично
+  </h2>
+  <Button class="justify-center px-7 py-5 text-17 md:px-9 md:py-5.5 md:text-18" />
+  <footer class="flex items-center justify-between border-t border-line-cta pt-5 md:mt-12 md:self-stretch md:pt-6">
+    <Logo class="text-18 md:text-20" />
+    <div class="font-mono text-12 font-medium tracking-wide-60">ЛИЧНАЯ CRM</div>
+  </footer>
+</section>

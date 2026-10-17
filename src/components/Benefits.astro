@@ -1,0 +1,44 @@
+---
+import SectionHeader from "./SectionHeader.astro";
+
+const benefits = [
+  {
+    title: "Люди чувствуют, что вы их помните",
+    text: "Вы спрашиваете, как прошёл переезд, и отношения от этого крепнут.",
+  },
+  {
+    title: "Больше не неловко",
+    text: "Не надо переспрашивать имя или делать вид, что помните.",
+  },
+  {
+    title: "Голова свободна",
+    text: "Держать всё в памяти больше не нужно, CRM помнит за вас.",
+  },
+  {
+    title: "Нужный человек всегда под рукой",
+    text: "Когда понадобится совет, специалист или рекомендация, вы быстро найдёте, к кому обратиться.",
+  },
+  {
+    title: "Открывается с телефона и компьютера",
+    text: "Данные одни и те же.",
+  },
+];
+---
+
+<section class="flex flex-col gap-7 px-5 pt-16 pb-14 md:gap-12 md:px-0 md:py-28">
+  <SectionHeader class="md:max-w-190" eyebrow="03 / ЧТО ВЫ ПОЛУЧАЕТЕ" eyebrowClass="text-accent-ink">
+    Личный CRM-помощник для&nbsp;ваших контактов
+  </SectionHeader>
+
+  {/* basis-101 = 340px card content + 2×32px padding, as in the mockup: 2 cards per row at 1280px */}
+  <ul class="flex flex-col gap-2.5 md:flex-row md:flex-wrap md:gap-4">
+    {
+      benefits.map(({ title, text }) => (
+        <li class="flex flex-col gap-2 rounded-28 bg-gray p-6 md:grow md:basis-101 md:gap-2.5 md:rounded-32 md:p-8">
+          <h3 class="text-20 leading-title font-bold tracking-tight-20 md:text-24 md:tracking-tight-25">{title}</h3>
+          <p class="text-16 leading-body text-pretty text-ink-soft md:text-17">{text}</p>
+        </li>
+      ))
+    }
+  </ul>
+</section>

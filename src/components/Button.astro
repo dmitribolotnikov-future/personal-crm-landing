@@ -1,0 +1,19 @@
+---
+import { APP_URL } from "../config";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<a
+  href={APP_URL}
+  class:list={[
+    "flex items-center gap-2.5 rounded-pill bg-ink font-semibold text-white hover:opacity-88 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-accent",
+    className,
+  ]}
+>
+  Открыть личную CRM <span aria-hidden="true">→</span>
+</a>

@@ -1,0 +1,21 @@
+---
+import Avatar from "./Avatar.astro";
+
+interface Props {
+  avatars: { initials: string; class: string }[];
+  /** Size, ring and font size shared by every avatar */
+  avatarClass: string;
+  /** Negative left margin that makes avatars overlap */
+  overlapClass: string;
+}
+
+const { avatars, avatarClass, overlapClass } = Astro.props;
+---
+
+<div aria-hidden="true" class="flex">
+  {
+    avatars.map(({ initials, class: colorClass }, index) => (
+      <Avatar class:list={[avatarClass, colorClass, index > 0 && overlapClass]}>{initials}</Avatar>
+    ))
+  }
+</div>

@@ -1,0 +1,91 @@
+---
+import Avatar from "./Avatar.astro";
+import SectionHeader from "./SectionHeader.astro";
+---
+
+<section
+  class="mx-3 flex flex-col gap-7 rounded-36 bg-powder px-5 pt-12 pb-6 md:mx-0 md:gap-12 md:rounded-48 md:px-block md:pt-18 md:pb-16"
+>
+  <SectionHeader class="md:max-w-180" eyebrow="02 / РЕШЕНИЕ" eyebrowClass="text-accent-deep">
+    Всё важное о&nbsp;человеке — в&nbsp;одной карточке
+  </SectionHeader>
+
+  <div
+    class="flex flex-col gap-2.5 md:grid md:grid-cols-[repeat(auto-fit,minmax(min(100%,--spacing(75)),1fr))] md:gap-6"
+  >
+    <div class="flex flex-col gap-2.5 md:gap-6">
+      <div aria-hidden="true" class="flex flex-col gap-4 rounded-24 bg-white p-5 md:min-h-50 md:rounded-28 md:p-5.5">
+        <div class="flex items-center gap-3">
+          <Avatar class="size-11 bg-accent text-16 text-white">СК</Avatar>
+          <div>
+            <div class="text-16 font-bold">Саша Ковалёва</div>
+            <div class="text-13 text-muted">Продакт в финтехе</div>
+          </div>
+        </div>
+        <div class="grid grid-cols-[auto_1fr] gap-x-3.5 gap-y-2 text-14 leading-snug">
+          <span class="text-muted">Где</span><span>Конференция Product Camp</span>
+          <span class="text-muted">Кто познакомил</span><span>Дима Морозов</span>
+          <span class="text-muted">Чем занимается</span><span>Платёжные продукты</span>
+        </div>
+      </div>
+      <div class="flex flex-col gap-1.5 px-1 pt-1 pb-5 md:gap-2 md:py-0">
+        <h3 class="text-20 leading-title font-bold tracking-tight-20 md:text-22">Карточка для каждого контакта</h3>
+        <p class="text-16 leading-body text-pretty text-ink-soft md:text-17">
+          В ней записано, где вы познакомились, кто вас познакомил и чем человек занимается.
+        </p>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-2.5 md:gap-6">
+      <div
+        aria-hidden="true"
+        class="flex flex-col gap-3 rounded-24 bg-ink p-5 text-white md:min-h-50 md:gap-3.5 md:rounded-28 md:p-5.5"
+      >
+        <div class="flex flex-col gap-1">
+          <div class="font-mono text-11 font-medium tracking-wide-60 text-accent-soft">12 МАРТА</div>
+          <div class="text-15 leading-snug font-medium">Переезжает в Тбилиси в мае, ищет школу для сына</div>
+        </div>
+        <div class="h-px bg-line-dark"></div>
+        <div class="flex flex-col gap-1">
+          <div class="font-mono text-11 font-medium tracking-wide-60 text-accent-soft">4 ФЕВРАЛЯ</div>
+          <div class="text-15 leading-snug font-medium text-on-dark-muted">Запускает новый продукт, просила фидбек</div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-1.5 px-1 pt-1 pb-5 md:gap-2 md:py-0">
+        <h3 class="text-20 leading-title font-bold tracking-tight-20 md:text-22">Возможность делать заметки</h3>
+        <p class="text-16 leading-body text-pretty text-ink-soft md:text-17">
+          Всю важную информацию всегда можно записать в карточку, а затем открыть и вспомнить, о чём говорили в прошлый
+          раз.
+        </p>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-2.5 md:gap-6">
+      <div aria-hidden="true" class="flex flex-col gap-1.5 rounded-24 bg-white p-3.5 md:min-h-50 md:rounded-28 md:p-4">
+        <div class="rounded-pill bg-gray px-4 py-3 text-15 text-muted">
+          Поиск: <span class="font-semibold text-ink">юрист</span>
+        </div>
+        <div class="flex items-center gap-3 px-1.5 py-2">
+          <Avatar class="size-9 bg-ink text-12 text-white">АМ</Avatar>
+          <div>
+            <div class="text-15 font-semibold">Аня Морозова</div>
+            <div class="text-13 text-muted">Юрист · подруга Лены с йоги</div>
+          </div>
+        </div>
+        <div class="hidden items-center gap-3 px-1.5 py-2 md:flex">
+          <Avatar class="size-9 bg-accent text-12 text-white">ИП</Avatar>
+          <div>
+            <div class="text-15 font-semibold">Игорь Петров</div>
+            <div class="text-13 text-muted">Юрист по IT · бывший коллега</div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-1.5 px-1 pt-1 md:gap-2 md:pt-0">
+        <h3 class="text-20 leading-title font-bold tracking-tight-20 md:text-22">Всё в одном месте</h3>
+        <p class="text-16 leading-body text-pretty text-ink-soft md:text-17">
+          Один список всех, кого вы знаете. Нужный человек находится поиском за пару секунд.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

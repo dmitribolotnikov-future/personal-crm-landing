@@ -1,0 +1,68 @@
+---
+import Avatar from "./Avatar.astro";
+import SectionHeader from "./SectionHeader.astro";
+
+const contacts = [
+  { initial: "С", name: "Саша Конференция", highlighted: true },
+  { initial: "А", name: "Андрей Сантехник?", highlighted: false },
+  { initial: "М", name: "Марина (от Оли)", highlighted: false },
+];
+
+const problems = [
+  {
+    title: "«Кто это вообще?»",
+    text: "В телефоне сотни контактов вроде «Саша Конференция», и уже не вспомнить, кто это и откуда.",
+  },
+  {
+    title: "Забываете, о чём говорили",
+    text: "Человек рассказал про переезд или новую работу, а через месяц вы уже об этом не помните.",
+  },
+  {
+    title: "Контакты разбросаны по разным местам",
+    text: "Часть в телефоне, часть в мессенджерах, часть в почте.",
+  },
+];
+---
+
+<section
+  class="flex flex-col gap-7 px-5 pt-16 pb-14 md:grid md:grid-cols-[repeat(auto-fit,minmax(min(100%,--spacing(105)),1fr))] md:gap-14 md:border-t md:border-line md:px-0 md:pt-14 md:pb-28"
+>
+  <div class="flex flex-col gap-7 md:gap-8">
+    <SectionHeader eyebrow="01 / ПРОБЛЕМА" eyebrowClass="text-accent-ink">
+      Контакты есть, а&nbsp;контекста нет
+    </SectionHeader>
+
+    {/* max-w-121 = 440px list + 2×22px padding */}
+    <div aria-hidden="true" class="flex flex-col gap-0.5 rounded-28 bg-gray p-4.5 md:max-w-121 md:rounded-32 md:p-5.5">
+      <div class="px-1 pb-2.5 font-mono text-11 font-medium tracking-wide-60 text-muted md:pb-3 md:text-12">
+        КОНТАКТЫ · 412
+      </div>
+      {
+        contacts.map(({ initial, name, highlighted }) => (
+          <div class:list={["flex items-center gap-3 p-3 md:p-3.5", highlighted && "rounded-16 bg-white md:rounded-18"]}>
+            <Avatar class="size-9 bg-avatar-gray text-13 text-muted-2 md:size-10 md:text-14">{initial}</Avatar>
+            <span class:list={["text-15 md:text-17", highlighted ? "font-semibold" : "font-medium text-muted-2"]}>
+              {name}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <ol class="flex flex-col md:justify-end">
+    {
+      problems.map(({ title, text }, index) => (
+        <li class="grid grid-cols-[--spacing(10)_1fr] gap-x-2 gap-y-1 border-t border-line py-5 last:border-b md:grid-cols-[--spacing(14)_1fr] md:gap-2 md:py-7">
+          <span aria-hidden="true" class="pt-1 font-mono text-13 font-medium text-accent md:pt-1.5 md:text-14">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <div class="flex flex-col gap-1.5 md:gap-2">
+            <h3 class="text-20 leading-title font-bold tracking-tight-20 md:text-26 md:tracking-tight-25">{title}</h3>
+            <p class="text-16 leading-body text-pretty text-ink-soft md:text-18">{text}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+</section>

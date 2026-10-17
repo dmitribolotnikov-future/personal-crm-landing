@@ -1,0 +1,18 @@
+---
+interface Props {
+  /** Small mono label above the title, e.g. "01 / ПРОБЛЕМА" */
+  eyebrow: string;
+  /** Eyebrow color depends on the section background */
+  eyebrowClass: string;
+  class?: string;
+}
+
+const { eyebrow, eyebrowClass, class: className } = Astro.props;
+---
+
+<div class:list={["flex flex-col gap-3 md:gap-3.5", className]}>
+  <p class:list={["font-mono text-12 font-medium tracking-wide-80 md:text-13", eyebrowClass]}>{eyebrow}</p>
+  <h2 class="text-34 leading-heading font-bold tracking-tight-40 text-balance md:text-h2 md:tracking-tight-45">
+    <slot />
+  </h2>
+</div>

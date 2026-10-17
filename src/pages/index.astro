@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Benefits from "../components/Benefits.astro";
+import Cta from "../components/Cta.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Problem from "../components/Problem.astro";
+import Solution from "../components/Solution.astro";
+---
+
+<Layout
+  title="Личная CRM — помните всех, кого знаете лично"
+  description="Храните все контакты в одном месте и записывайте важное о каждом человеке, чтобы ничего не терялось"
+>
+  <main class="mx-auto max-w-320 md:px-10">
+    {/* On mobile the header and hero fill one 844px phone screen */}
+    <div class="flex h-211 flex-col md:block md:h-auto">
+      <Header />
+      <Hero />
+    </div>
+    <Problem />
+    <Solution />
+    <Benefits />
+    <Cta />
+  </main>
+</Layout>
